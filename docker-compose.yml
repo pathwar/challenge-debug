@@ -4,4 +4,4 @@ services:
   gotty:
     build: gotty
     ports:
-      - 8080:8080
+      - 8080
