@@ -2,8 +2,7 @@ FROM golang:alpine
 
 EXPOSE 8080
 
-RUN apk add --update go git && \
-  apk add bash && \
+RUN apk add --update go git bash && \
   mkdir -p /tmp/gotty && \
   GOPATH=/tmp/gotty go get github.com/yudai/gotty && \
   mv /tmp/gotty/bin/gotty /usr/local/bin/ && \
