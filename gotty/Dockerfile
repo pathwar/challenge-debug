@@ -12,4 +12,4 @@ RUN apk add --update go git bash && \
 COPY on-init /pwinit/
 
 ENTRYPOINT ["/usr/local/bin/gotty"]
-CMD ["--permit-write","--reconnect","/bin/bash"]
+CMD ["--permit-write","--reconnect","--ws-origin","pathwar.net","/bin/bash"]
