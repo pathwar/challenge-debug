@@ -1,0 +1,14 @@
+name: Semantic Release
+
+on: push
+
+jobs:
+  semantic-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - run: cp .github/.releaserc.js .
+      - uses: codfish/semantic-release-action@v1
+        if: github.ref == 'refs/heads/master'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
