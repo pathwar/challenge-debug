@@ -1,5 +1,26 @@
 version: '3.7'
 
+# releases metadata (optional)
+x-pathwar:
+  challenge:
+    name: "Debug"
+    slug: debug
+    locale: "en"
+    author: "Pathwar Staff"
+    homepage: https://github.com/pathwar/challenge-debug
+  flavor:
+    purchase_price: 0
+    validation_reward: 0
+    body: "Challenge used to debug agents."
+    passphrases: 1
+    category: shell
+    tags:
+      - tutorial
+    redump-policy:
+      - strategy: on-validation
+      - strategy: every
+        delay: 1h
+
 services:
   gotty:
     build: gotty
